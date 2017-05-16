@@ -13,6 +13,7 @@ extension MemeViewController{
     
     // MARK: Meme generator and saving methods
     
+    
     func save() {
         // Create the meme and store in photo album if not nil
         if let _ = topTextField?.text, bottomTextField?.text != nil, imageView?.image != nil {

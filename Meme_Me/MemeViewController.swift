@@ -17,17 +17,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var toolbar: UIToolbar!
     
+
     
-    // bool to prevent view from moving if unnecessary
-    var topWasTouched: Bool = false
+    let keyboardSlider = KeyboardSlider()
     
-    // meme object struct
-    struct Meme {
-        var topText = ""
-        var bottomText = ""
-        var image = UIImage()
-        var memedImage = UIImage()
-    }
+  
     
     // variable for settings update
     var fontString = "HelveticaNeue-CondensedBlack"
@@ -40,57 +34,61 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
 
         //subscribe to slide
-        subscribeToKeyboardNotifications()
-
+        keyboardSlider.subscribeToKeyboardNotifications(view: view)
+        
         // text field attributes
         if imageView.image == nil {
             topTextField.text = "TOP"
             bottomTextField.text = "BOTTOM"
             }
-        
-        self.topTextField.delegate = self
-        self.bottomTextField.delegate = self
+        textFieldAttributes(textField: topTextField)
+        textFieldAttributes(textField: bottomTextField)
+       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        keyboardSlider.unsubscribeFromKeyboardNotifications()
+    }
+
+    
+    // MARK: Textfield
+    
+    func textFieldAttributes(textField: UITextField) {
         let memeTextAttributes:[String:Any] = [
             NSStrokeColorAttributeName: UIColor.black,
             NSFontAttributeName: UIFont(name: fontString, size: 40)!,
             NSForegroundColorAttributeName: UIColor.white,
             NSStrokeWidthAttributeName: -2.5]
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
-        topTextField.borderStyle = .none
-        bottomTextField.borderStyle = .none
-        topTextField.sizeToFit()
-        bottomTextField.sizeToFit()
 
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+        textField.borderStyle = .none
+        textField.sizeToFit()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
+
+    // MARK: ImagePickerHelper for Actions
+    
+    func helperImagePicker(sourceType: UIImagePickerControllerSourceType) -> UIImagePickerController {
+        // assign source type to imagePicker and return it based on selected button
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = sourceType
+        return picker
     }
-
     
-    
-    
-
     
     // MARK: Actions
     
     @IBAction func pickAnImage(_ sender: Any) {
-        let pickercontroller = UIImagePickerController()
-        pickercontroller.delegate = self
-        pickercontroller.sourceType = .photoLibrary
-        self.present(pickercontroller, animated: true, completion: nil)
+        present(helperImagePicker(sourceType: .photoLibrary), animated: true, completion: nil)
     }
     
     
     @IBAction func imageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        present(helperImagePicker(sourceType: .camera), animated: true, completion: nil)
         
     }
     
@@ -100,8 +98,9 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // set image then launch activity controller to share or save meme
         let image = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
         controller.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> () in
-            if (completed) {
+            if completed {
                 // auto save, do not save duplicates if they select save image
                 if activityType == UIActivityType.saveToCameraRoll {
                     // if user touches save launch confirmation and close activity
@@ -113,7 +112,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 }
             }
         }
-        
         present(controller, animated: true, completion: nil)
     }
     
@@ -123,7 +121,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Send user to settings page and ensure display matches picker defaults.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Settings"{
             let destinationNavigationController = segue.destination as! UINavigationController

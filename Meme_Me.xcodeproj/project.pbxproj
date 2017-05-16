@@ -18,6 +18,7 @@
 		426496AF1ECA97F2005BA0AC /* SettingsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A71ECA97F1005BA0AC /* SettingsPicker.swift */; };
 		426496B01ECA97F2005BA0AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A81ECA97F1005BA0AC /* SettingsViewController.swift */; };
 		426496B11ECA97F2005BA0AC /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A91ECA97F1005BA0AC /* textField.swift */; };
+		426496B31ECB276A005BA0AC /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496B21ECB276A005BA0AC /* MemeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		426496A71ECA97F1005BA0AC /* SettingsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPicker.swift; sourceTree = "<group>"; };
 		426496A81ECA97F1005BA0AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		426496A91ECA97F1005BA0AC /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		426496B21ECB276A005BA0AC /* MemeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,19 +69,36 @@
 			isa = PBXGroup;
 			children = (
 				426496A21ECA97F1005BA0AC /* AppDelegate.swift */,
-				426496A31ECA97F1005BA0AC /* imagePicker.swift */,
+				426496B51ECB6530005BA0AC /* MemeView */,
+				426496B41ECB651E005BA0AC /* Settings */,
 				426496A41ECA97F1005BA0AC /* keyboardSlider.swift */,
-				426496A51ECA97F1005BA0AC /* MemeViewController.swift */,
-				426496A61ECA97F1005BA0AC /* save.swift */,
-				426496A71ECA97F1005BA0AC /* SettingsPicker.swift */,
-				426496A81ECA97F1005BA0AC /* SettingsViewController.swift */,
-				426496A91ECA97F1005BA0AC /* textField.swift */,
+				426496B21ECB276A005BA0AC /* MemeStruct.swift */,
 				4264969F1ECA9788005BA0AC /* Main.storyboard */,
 				426496811ECA91AD005BA0AC /* Assets.xcassets */,
 				426496831ECA91AD005BA0AC /* LaunchScreen.storyboard */,
 				426496861ECA91AD005BA0AC /* Info.plist */,
 			);
 			path = Meme_Me;
+			sourceTree = "<group>";
+		};
+		426496B41ECB651E005BA0AC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				426496A71ECA97F1005BA0AC /* SettingsPicker.swift */,
+				426496A81ECA97F1005BA0AC /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		426496B51ECB6530005BA0AC /* MemeView */ = {
+			isa = PBXGroup;
+			children = (
+				426496A51ECA97F1005BA0AC /* MemeViewController.swift */,
+				426496A61ECA97F1005BA0AC /* save.swift */,
+				426496A91ECA97F1005BA0AC /* textField.swift */,
+				426496A31ECA97F1005BA0AC /* imagePicker.swift */,
+			);
+			name = MemeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +179,7 @@
 				426496AA1ECA97F2005BA0AC /* AppDelegate.swift in Sources */,
 				426496B01ECA97F2005BA0AC /* SettingsViewController.swift in Sources */,
 				426496B11ECA97F2005BA0AC /* textField.swift in Sources */,
+				426496B31ECB276A005BA0AC /* MemeStruct.swift in Sources */,
 				426496AB1ECA97F2005BA0AC /* imagePicker.swift in Sources */,
 				426496AD1ECA97F2005BA0AC /* MemeViewController.swift in Sources */,
 				426496AC1ECA97F2005BA0AC /* keyboardSlider.swift in Sources */,
@@ -335,6 +355,7 @@
 				4264968B1ECA91AD005BA0AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

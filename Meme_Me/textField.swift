@@ -17,21 +17,21 @@ extension MemeViewController{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // delete all text on didBeginEditing
+        // set class boolean in order to move view properly
         if (textField == self.topTextField) {
-            topWasTouched = true
+            keyboardSlider.top = true
             topTextField.text = ""
         }
         else {
+            keyboardSlider.top = false
             bottomTextField.text = ""
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // hide keyboard
-        self.bottomTextField.resignFirstResponder()
-        self.topTextField.resignFirstResponder()
-        // reset bool
-        topWasTouched = false
+        // hide keyboard and reset boolean
+        keyboardSlider.top = false
+        textField.resignFirstResponder()
         if view.frame.origin.y != 0 {
             // smooth animation to hide the keyboard in place of the observer
             // using the observer was choppy

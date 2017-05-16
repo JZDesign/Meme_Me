@@ -9,16 +9,19 @@
 import Foundation
 import UIKit
 
-extension MemeViewController {
+//extension MemeViewController {
+
+class KeyboardSlider: NSObject {
+    
+    // variables to hold and process information from the view using this class
+    var view: UIView?
+    var top = Bool()
     
     
-    // MARK: Keyboard Slider and observer methods
-    
-    
-    func keyboardWillShow(_ notification: NSNotification) {
+    func keyboardWillShow(notification: NSNotification) {
         // selector method to move keyboard up
-        if topWasTouched == false {
-            view.frame.origin.y = 0 - getKeyboardHeight(notification as Notification)
+        if top == false {
+            view?.frame.origin.y = 0 - getKeyboardHeight(notification as Notification)
         }
     }
     
@@ -36,13 +39,13 @@ extension MemeViewController {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
-        
     }
     
-    func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        // observer method to hide keyboard
-        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDissapear(_:)), name: .UIKeyboardDidHide, object: nil)
+    func subscribeToKeyboardNotifications(view: UIView) {
+        // assigning view class' counterparts
+        self.view = view
+        // when UIKeyboardWillShow do keyboardWillShow function
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
