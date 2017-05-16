@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     // variables to change settings
     var backgroundColor = UIColor()
-    var textAttributeFont = "Copperplate"
+    var textAttributeFont = UIFont.familyNames[0]
     var textAttributes:[String:Any] = [:]
     
     
@@ -60,6 +60,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
             NSStrokeWidthAttributeName: -2.5]
         fontField.defaultTextAttributes = textAttributes
         fontField.textAlignment = .center
+        fontField.sizeToFit()
     }
     
     

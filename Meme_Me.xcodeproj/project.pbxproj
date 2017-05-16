@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		426496821ECA91AD005BA0AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426496811ECA91AD005BA0AC /* Assets.xcassets */; };
 		426496851ECA91AD005BA0AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426496831ECA91AD005BA0AC /* LaunchScreen.storyboard */; };
-		426496941ECA91CC005BA0AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264968C1ECA91CC005BA0AC /* AppDelegate.swift */; };
-		426496951ECA91CC005BA0AC /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264968D1ECA91CC005BA0AC /* imagePicker.swift */; };
-		426496961ECA91CC005BA0AC /* keyboardSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264968E1ECA91CC005BA0AC /* keyboardSlider.swift */; };
-		426496971ECA91CC005BA0AC /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4264968F1ECA91CC005BA0AC /* MemeViewController.swift */; };
-		426496981ECA91CC005BA0AC /* save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496901ECA91CC005BA0AC /* save.swift */; };
-		426496991ECA91CC005BA0AC /* SettingsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496911ECA91CC005BA0AC /* SettingsPicker.swift */; };
-		4264969A1ECA91CC005BA0AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496921ECA91CC005BA0AC /* SettingsViewController.swift */; };
-		4264969B1ECA91CC005BA0AC /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496931ECA91CC005BA0AC /* textField.swift */; };
-		4264969E1ECA91F2005BA0AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4264969C1ECA91F2005BA0AC /* Main.storyboard */; };
+		426496A11ECA9788005BA0AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4264969F1ECA9788005BA0AC /* Main.storyboard */; };
+		426496AA1ECA97F2005BA0AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A21ECA97F1005BA0AC /* AppDelegate.swift */; };
+		426496AB1ECA97F2005BA0AC /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A31ECA97F1005BA0AC /* imagePicker.swift */; };
+		426496AC1ECA97F2005BA0AC /* keyboardSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A41ECA97F1005BA0AC /* keyboardSlider.swift */; };
+		426496AD1ECA97F2005BA0AC /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A51ECA97F1005BA0AC /* MemeViewController.swift */; };
+		426496AE1ECA97F2005BA0AC /* save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A61ECA97F1005BA0AC /* save.swift */; };
+		426496AF1ECA97F2005BA0AC /* SettingsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A71ECA97F1005BA0AC /* SettingsPicker.swift */; };
+		426496B01ECA97F2005BA0AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A81ECA97F1005BA0AC /* SettingsViewController.swift */; };
+		426496B11ECA97F2005BA0AC /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426496A91ECA97F1005BA0AC /* textField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,15 +25,15 @@
 		426496811ECA91AD005BA0AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		426496841ECA91AD005BA0AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		426496861ECA91AD005BA0AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4264968C1ECA91CC005BA0AC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../imagePickerTest/imagePickerTest/AppDelegate.swift; sourceTree = "<group>"; };
-		4264968D1ECA91CC005BA0AC /* imagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = imagePicker.swift; path = ../../imagePickerTest/imagePickerTest/imagePicker.swift; sourceTree = "<group>"; };
-		4264968E1ECA91CC005BA0AC /* keyboardSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = keyboardSlider.swift; path = ../../imagePickerTest/imagePickerTest/keyboardSlider.swift; sourceTree = "<group>"; };
-		4264968F1ECA91CC005BA0AC /* MemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeViewController.swift; path = ../../imagePickerTest/imagePickerTest/MemeViewController.swift; sourceTree = "<group>"; };
-		426496901ECA91CC005BA0AC /* save.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = save.swift; path = ../../imagePickerTest/imagePickerTest/save.swift; sourceTree = "<group>"; };
-		426496911ECA91CC005BA0AC /* SettingsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPicker.swift; path = ../../imagePickerTest/imagePickerTest/SettingsPicker.swift; sourceTree = "<group>"; };
-		426496921ECA91CC005BA0AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../../imagePickerTest/imagePickerTest/SettingsViewController.swift; sourceTree = "<group>"; };
-		426496931ECA91CC005BA0AC /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = textField.swift; path = ../../imagePickerTest/imagePickerTest/textField.swift; sourceTree = "<group>"; };
-		4264969D1ECA91F2005BA0AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../imagePickerTest/imagePickerTest/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		426496A01ECA9788005BA0AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Meme_Me/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		426496A21ECA97F1005BA0AC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		426496A31ECA97F1005BA0AC /* imagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
+		426496A41ECA97F1005BA0AC /* keyboardSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keyboardSlider.swift; sourceTree = "<group>"; };
+		426496A51ECA97F1005BA0AC /* MemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
+		426496A61ECA97F1005BA0AC /* save.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = save.swift; sourceTree = "<group>"; };
+		426496A71ECA97F1005BA0AC /* SettingsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPicker.swift; sourceTree = "<group>"; };
+		426496A81ECA97F1005BA0AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		426496A91ECA97F1005BA0AC /* textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +66,15 @@
 		426496791ECA91AD005BA0AC /* Meme_Me */ = {
 			isa = PBXGroup;
 			children = (
-				4264968C1ECA91CC005BA0AC /* AppDelegate.swift */,
-				4264968D1ECA91CC005BA0AC /* imagePicker.swift */,
-				4264968E1ECA91CC005BA0AC /* keyboardSlider.swift */,
-				4264968F1ECA91CC005BA0AC /* MemeViewController.swift */,
-				426496901ECA91CC005BA0AC /* save.swift */,
-				426496911ECA91CC005BA0AC /* SettingsPicker.swift */,
-				426496921ECA91CC005BA0AC /* SettingsViewController.swift */,
-				426496931ECA91CC005BA0AC /* textField.swift */,
-				4264969C1ECA91F2005BA0AC /* Main.storyboard */,
+				426496A21ECA97F1005BA0AC /* AppDelegate.swift */,
+				426496A31ECA97F1005BA0AC /* imagePicker.swift */,
+				426496A41ECA97F1005BA0AC /* keyboardSlider.swift */,
+				426496A51ECA97F1005BA0AC /* MemeViewController.swift */,
+				426496A61ECA97F1005BA0AC /* save.swift */,
+				426496A71ECA97F1005BA0AC /* SettingsPicker.swift */,
+				426496A81ECA97F1005BA0AC /* SettingsViewController.swift */,
+				426496A91ECA97F1005BA0AC /* textField.swift */,
+				4264969F1ECA9788005BA0AC /* Main.storyboard */,
 				426496811ECA91AD005BA0AC /* Assets.xcassets */,
 				426496831ECA91AD005BA0AC /* LaunchScreen.storyboard */,
 				426496861ECA91AD005BA0AC /* Info.plist */,
@@ -115,6 +115,7 @@
 					426496761ECA91AD005BA0AC = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5X48PFL69D;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -144,7 +145,7 @@
 			files = (
 				426496851ECA91AD005BA0AC /* LaunchScreen.storyboard in Resources */,
 				426496821ECA91AD005BA0AC /* Assets.xcassets in Resources */,
-				4264969E1ECA91F2005BA0AC /* Main.storyboard in Resources */,
+				426496A11ECA9788005BA0AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,14 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426496941ECA91CC005BA0AC /* AppDelegate.swift in Sources */,
-				4264969B1ECA91CC005BA0AC /* textField.swift in Sources */,
-				426496951ECA91CC005BA0AC /* imagePicker.swift in Sources */,
-				426496961ECA91CC005BA0AC /* keyboardSlider.swift in Sources */,
-				426496981ECA91CC005BA0AC /* save.swift in Sources */,
-				426496971ECA91CC005BA0AC /* MemeViewController.swift in Sources */,
-				426496991ECA91CC005BA0AC /* SettingsPicker.swift in Sources */,
-				4264969A1ECA91CC005BA0AC /* SettingsViewController.swift in Sources */,
+				426496AF1ECA97F2005BA0AC /* SettingsPicker.swift in Sources */,
+				426496AA1ECA97F2005BA0AC /* AppDelegate.swift in Sources */,
+				426496B01ECA97F2005BA0AC /* SettingsViewController.swift in Sources */,
+				426496B11ECA97F2005BA0AC /* textField.swift in Sources */,
+				426496AB1ECA97F2005BA0AC /* imagePicker.swift in Sources */,
+				426496AD1ECA97F2005BA0AC /* MemeViewController.swift in Sources */,
+				426496AC1ECA97F2005BA0AC /* keyboardSlider.swift in Sources */,
+				426496AE1ECA97F2005BA0AC /* save.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,10 +178,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		4264969C1ECA91F2005BA0AC /* Main.storyboard */ = {
+		4264969F1ECA9788005BA0AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4264969D1ECA91F2005BA0AC /* Base */,
+				426496A01ECA9788005BA0AC /* Base */,
 			);
 			name = Main.storyboard;
 			path = ..;
@@ -288,12 +289,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5X48PFL69D;
 				INFOPLIST_FILE = Meme_Me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jacobrakidzich.Meme-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -302,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5X48PFL69D;
 				INFOPLIST_FILE = Meme_Me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

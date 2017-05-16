@@ -129,7 +129,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             let destinationNavigationController = segue.destination as! UINavigationController
             let targetController = destinationNavigationController.topViewController as! SettingsViewController
             targetController.delegate = self
-            targetController.textAttributeFont = "Copperplate"
+            targetController.textAttributeFont = UIFont.familyNames[0]
             targetController.backgroundColor = .blue
         }
     }
