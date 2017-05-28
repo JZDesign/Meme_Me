@@ -15,13 +15,21 @@ extension MemeViewController{
     
     
     func save() {
-        // Create the meme and store in photo album if not nil
+        // Create the meme and store if not nil
         if let _ = topTextField?.text, bottomTextField?.text != nil, imageView?.image != nil {
-            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generateMemedImage())
-            UIImageWriteToSavedPhotosAlbum(meme.memedImage, self, #selector(image(_:didFinishSavingWithError:_:)), nil)
+            var meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generateMemedImage())
+            // save array to appdelegate and also to photo album
+            let object = UIApplication.shared.delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
+            // disabled for 2.0
+            //UIImageWriteToSavedPhotosAlbum(meme.memedImage, self, #selector(image(_:didFinishSavingWithError:_:)), nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
+    /*
+     //disabled for 2.0
     // helper method to handle errors and complete the save, modified from stack overflow
     func image(_: UIImage, didFinishSavingWithError error: NSError?, _:UnsafeRawPointer) {
         if error == nil {
@@ -40,6 +48,7 @@ extension MemeViewController{
         present(ac, animated: true, completion: nil)
     }
     
+     */
     
     // remove tool and navigation bars and save the data on the screen as a meme.
     func generateMemedImage() -> UIImage {

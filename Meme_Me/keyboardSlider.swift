@@ -42,7 +42,7 @@ class KeyboardSlider: NSObject {
     }
     
     func subscribeToKeyboardNotifications(view: UIView) {
-        // assigning view class' counterparts
+        // assigning view to class' counterpart
         self.view = view
         // when UIKeyboardWillShow do keyboardWillShow function
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)

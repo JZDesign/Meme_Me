@@ -16,8 +16,9 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet var cancelButtonOutlet: UIBarButtonItem!
     
-
+var memes: [Meme]!
     
     let keyboardSlider = KeyboardSlider()
     
@@ -32,7 +33,17 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillAppear(_ animated: Bool) {
         //set camera button based on device capability
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-
+        
+        // find memes
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
+        
+        // set cancel button isEnabled based on meme count
+        if memes.count < 1{
+            cancelButtonOutlet.isEnabled = false
+        } else {
+            cancelButtonOutlet.isEnabled = true
+        }
+        
         //subscribe to slide
         keyboardSlider.subscribeToKeyboardNotifications(view: view)
         
@@ -102,20 +113,28 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         controller.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> () in
             if completed {
                 // auto save, do not save duplicates if they select save image
+                self.save()
+                /*
                 if activityType == UIActivityType.saveToCameraRoll {
                     // if user touches save launch confirmation and close activity
-                    self.dismiss(animated: true, completion: nil)
                     self.saveAlert()
+                    self.dismiss(animated: true, completion: nil)
+                    
                 } else {
                     self.save()
                     self.dismiss(animated: true, completion: nil)
                 }
+                    */
             }
         }
         present(controller, animated: true, completion: nil)
     }
     
     
+    // go to tab bar and cancel meme creation
+    @IBAction func doCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
         
