@@ -29,7 +29,11 @@ var memes: [Meme]!
     
     
     // MARK: Lifcycle
-    
+    override func viewDidLoad() {
+        // text field attributes
+        textFieldAttributes(textField: topTextField)
+        textFieldAttributes(textField: bottomTextField)
+    }
     override func viewWillAppear(_ animated: Bool) {
         //set camera button based on device capability
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -47,13 +51,12 @@ var memes: [Meme]!
         //subscribe to slide
         keyboardSlider.subscribeToKeyboardNotifications(view: view)
         
-        // text field attributes
+        // text field reset
         if imageView.image == nil {
             topTextField.text = "TOP"
             bottomTextField.text = "BOTTOM"
             }
-        textFieldAttributes(textField: topTextField)
-        textFieldAttributes(textField: bottomTextField)
+        
        
     }
     
