@@ -29,11 +29,7 @@ var memes: [Meme]!
     
     
     // MARK: Lifcycle
-    override func viewDidLoad() {
-        // text field attributes
-        textFieldAttributes(textField: topTextField)
-        textFieldAttributes(textField: bottomTextField)
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
         //set camera button based on device capability
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -56,7 +52,11 @@ var memes: [Meme]!
             topTextField.text = "TOP"
             bottomTextField.text = "BOTTOM"
             }
-        
+        // text field attributes
+        // if called in viewDidLoad, text type does not update after settings
+        textFieldAttributes(textField: topTextField)
+        textFieldAttributes(textField: bottomTextField)
+
        
     }
     
@@ -116,7 +116,7 @@ var memes: [Meme]!
         controller.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> () in
             if completed {
                 // auto save, do not save duplicates if they select save image
-                self.save()
+                self.save(didSave: activityType == UIActivityType.saveToCameraRoll)
                 /*
                 if activityType == UIActivityType.saveToCameraRoll {
                     // if user touches save launch confirmation and close activity
@@ -136,7 +136,7 @@ var memes: [Meme]!
     
     // go to tab bar and cancel meme creation
     @IBAction func doCancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     

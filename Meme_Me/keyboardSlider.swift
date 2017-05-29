@@ -14,7 +14,7 @@ import UIKit
 class KeyboardSlider: NSObject {
     
     // variables to hold and process information from the view using this class
-    var view: UIView?
+    weak var view: UIView?
     var top = Bool()
     
     

@@ -70,12 +70,12 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     // update settings or revert to defaults by passing data through the settings delegate
     @IBAction func doDoneButton(_ sender: Any) {
         self.delegate?.readData(fontType: textAttributeFont, theBackgroundColor: backgroundColor)
-        self.dismiss(animated: true)
+        dismiss(animated: true)
     }
     
     @IBAction func doCancelButton(_ sender: Any) {
         self.delegate?.readData(fontType: "HelveticaNeue-CondensedBlack", theBackgroundColor: UIColor.init(colorLiteralRed: 0.258, green: 0.258, blue: 0.258, alpha: 1.0))
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
 

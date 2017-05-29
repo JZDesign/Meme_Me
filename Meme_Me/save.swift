@@ -14,41 +14,66 @@ extension MemeViewController{
     // MARK: Meme generator and saving methods
     
     
-    func save() {
+    func save(didSave: Bool) {
         // Create the meme and store if not nil
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        let count = appDelegate.memes.count
         if let _ = topTextField?.text, bottomTextField?.text != nil, imageView?.image != nil {
             var meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memedImage: generateMemedImage())
             // save array to appdelegate and also to photo album
-            let object = UIApplication.shared.delegate
-            let appDelegate = object as! AppDelegate
             appDelegate.memes.append(meme)
-            // disabled for 2.0
-            //UIImageWriteToSavedPhotosAlbum(meme.memedImage, self, #selector(image(_:didFinishSavingWithError:_:)), nil)
-            self.dismiss(animated: true, completion: nil)
+            if appDelegate.memes.count > count{
+                saveAlert(didSave: didSave, memedImage: meme.memedImage)
+            }
         }
     }
     
-    /*
-     //disabled for 2.0
+    
+    
     // helper method to handle errors and complete the save, modified from stack overflow
+    
     func image(_: UIImage, didFinishSavingWithError error: NSError?, _:UnsafeRawPointer) {
         if error == nil {
-            saveAlert()
+            let ac = UIAlertController(title: "Save Complete!", message: nil, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Heck Yes!", style: .default, handler:{(action:UIAlertAction) in self.dismiss(animated: true)}))
+            present(ac, animated: true, completion: nil)
         } else {
             let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler:{(action:UIAlertAction) in self.dismiss(animated: true)}))
             present(ac, animated: true, completion: nil)
         }
+        
     }
     
-    // let user know that image was saved
-    func saveAlert() {
-        let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to the photo album.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Heck Yes!", style: .default, handler: nil))
+    // let user know that image was saved or offer to save it
+    func saveAlert(didSave: Bool, memedImage: UIImage) {
+        
+        var ac: UIAlertController
+        
+        let unsavedMessage = "Do you want to save your image to the Photo Gallery?"
+        let savedMessage = "Your image has been saved to the Photo Album."
+        
+        let action = UIAlertAction(title: "Heck Yes!", style: .default, handler: {(action:UIAlertAction!) in self.dismiss(animated: true)})
+        
+        let save = UIAlertAction(title: "Yes", style: .default, handler: {(action:UIAlertAction) in UIImageWriteToSavedPhotosAlbum(memedImage, self, #selector(self.image(_:didFinishSavingWithError:_:)), nil)
+        })
+        
+        if didSave {
+            ac = UIAlertController(title: "Saved!", message: savedMessage, preferredStyle: .alert)
+            ac.addAction(action)
+        } else {
+            ac = UIAlertController(title: "Hey!", message: unsavedMessage, preferredStyle: .alert)
+            ac.addAction(save)
+            ac.addAction(UIAlertAction(title: "No Thanks", style: .destructive, handler:{(action:UIAlertAction) in self.dismiss(animated: true)}))
+        }
         present(ac, animated: true, completion: nil)
+        
+    
+        
     }
     
-     */
+    
     
     // remove tool and navigation bars and save the data on the screen as a meme.
     func generateMemedImage() -> UIImage {
