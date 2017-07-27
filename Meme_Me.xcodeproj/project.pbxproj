@@ -57,6 +57,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420882101F29697900A7598C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				426496A31ECA97F1005BA0AC /* imagePicker.swift */,
+				426496A91ECA97F1005BA0AC /* textField.swift */,
+				426496A61ECA97F1005BA0AC /* save.swift */,
+				4264971B1ED9EE06005BA0AC /* MemeCollectionViewController.swift */,
+				4264971D1ED9EF88005BA0AC /* MemeTableViewController.swift */,
+				426497211EDB60F8005BA0AC /* DetailViewController.swift */,
+				426496A51ECA97F1005BA0AC /* MemeViewController.swift */,
+				426496A81ECA97F1005BA0AC /* SettingsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		420882111F2969A100A7598C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4264971F1EDA00C3005BA0AC /* MemeCollectionViewCell.swift */,
+				426496A71ECA97F1005BA0AC /* SettingsPicker.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		420882121F2969AD00A7598C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				426496A41ECA97F1005BA0AC /* keyboardSlider.swift */,
+				426496B21ECB276A005BA0AC /* MemeStruct.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4264966E1ECA91AD005BA0AC = {
 			isa = PBXGroup;
 			children = (
@@ -77,48 +110,15 @@
 			isa = PBXGroup;
 			children = (
 				426496A21ECA97F1005BA0AC /* AppDelegate.swift */,
-				4264971A1ED9EDE6005BA0AC /* SentMemes */,
-				426496B51ECB6530005BA0AC /* MemeView */,
-				426496B41ECB651E005BA0AC /* Settings */,
-				426496A41ECA97F1005BA0AC /* keyboardSlider.swift */,
-				426496B21ECB276A005BA0AC /* MemeStruct.swift */,
+				420882101F29697900A7598C /* Controller */,
+				420882111F2969A100A7598C /* View */,
+				420882121F2969AD00A7598C /* Model */,
 				4264969F1ECA9788005BA0AC /* Main.storyboard */,
 				426496811ECA91AD005BA0AC /* Assets.xcassets */,
 				426496831ECA91AD005BA0AC /* LaunchScreen.storyboard */,
 				426496861ECA91AD005BA0AC /* Info.plist */,
 			);
 			path = Meme_Me;
-			sourceTree = "<group>";
-		};
-		426496B41ECB651E005BA0AC /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				426496A71ECA97F1005BA0AC /* SettingsPicker.swift */,
-				426496A81ECA97F1005BA0AC /* SettingsViewController.swift */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		426496B51ECB6530005BA0AC /* MemeView */ = {
-			isa = PBXGroup;
-			children = (
-				426496A51ECA97F1005BA0AC /* MemeViewController.swift */,
-				426496A61ECA97F1005BA0AC /* save.swift */,
-				426496A91ECA97F1005BA0AC /* textField.swift */,
-				426496A31ECA97F1005BA0AC /* imagePicker.swift */,
-			);
-			name = MemeView;
-			sourceTree = "<group>";
-		};
-		4264971A1ED9EDE6005BA0AC /* SentMemes */ = {
-			isa = PBXGroup;
-			children = (
-				4264971B1ED9EE06005BA0AC /* MemeCollectionViewController.swift */,
-				4264971D1ED9EF88005BA0AC /* MemeTableViewController.swift */,
-				4264971F1EDA00C3005BA0AC /* MemeCollectionViewCell.swift */,
-				426497211EDB60F8005BA0AC /* DetailViewController.swift */,
-			);
-			name = SentMemes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

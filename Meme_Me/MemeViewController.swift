@@ -117,17 +117,6 @@ var memes: [Meme]!
             if completed {
                 // auto save, do not save duplicates if they select save image
                 self.save(didSave: activityType == UIActivityType.saveToCameraRoll)
-                /*
-                if activityType == UIActivityType.saveToCameraRoll {
-                    // if user touches save launch confirmation and close activity
-                    self.saveAlert()
-                    self.dismiss(animated: true, completion: nil)
-                    
-                } else {
-                    self.save()
-                    self.dismiss(animated: true, completion: nil)
-                }
-                    */
             }
         }
         present(controller, animated: true, completion: nil)
